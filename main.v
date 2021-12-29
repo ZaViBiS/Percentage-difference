@@ -11,10 +11,19 @@ fn main() {
 	parameter.parse()
 	first := parameter.unknown[0].f64()
 	second := parameter.unknown[1].f64()
-	if first > second {
-		println('${cal(first, second)} %')
-	}else {
-		println('${cal(second, first)} %')
+	println(parameter)
+	if 'n' in parameter.options {
+		if first < second {
+			println('${cal(first, second)} %')
+		} else {
+			println('${cal(second, first)} %')
+		}
+	} else {
+		if first > second {
+			println('${cal(first, second)} %')
+		} else {
+			println('${cal(second, first)} %')
+		}
 	}
 }
 
