@@ -3,7 +3,7 @@
 ```console
 ➜  Percentage difference git:(master) ✗ ./pd 1 2        
 100 %
-➜  Percentage difference git:(master) ✗ ./pd 2 1 -n        
+➜  Percentage difference git:(master) ✗ ./pd 1 2 -n        
 -50 %
 ```
 
