@@ -6,11 +6,12 @@ module version
 
 import net.http
 
-fn check() {
+pub fn check() {
 	new_ver := http.get(version_url) or {
-			println(err)
-			return version
-		}
+		println(err)
+		exit(1)
+	}
+	println(new_ver.text.f64())
 	if new_ver.text.f64() != version {
 		println('update available $version -> $new_ver')
 	} else {

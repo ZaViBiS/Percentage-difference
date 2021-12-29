@@ -2,16 +2,22 @@
  *  GPL-3.0
  *  Copyright (C) 2021  ZaViBiS
  */
+module main
+
 import os
 
 import nedpals.vargs
+import version
 
 fn main() {
 	mut parameter := vargs.new(os.args, 0)
 	parameter.parse()
 	first := parameter.unknown[0].f64()
 	second := parameter.unknown[1].f64()
-	println(parameter)
+	if 'v' in parameter.options {
+		version.check()
+		exit(0)
+	}
 	if 'n' in parameter.options {
 		if first < second {
 			println('${cal(first, second)} %')
