@@ -12,12 +12,12 @@ import version
 fn main() {
 	mut parameter := vargs.new(os.args, 0)
 	parameter.parse()
-	first := parameter.unknown[0].f64()
-	second := parameter.unknown[1].f64()
 	if 'v' in parameter.options {
 		version.check()
 		exit(0)
 	}
+	first := parameter.unknown[0].f64()
+	second := parameter.unknown[1].f64()
 	if 'n' in parameter.options {
 		if first < second {
 			println('${cal(first, second)} %')

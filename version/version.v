@@ -4,5 +4,16 @@
  */
 module version
 
-pub const version = 0.1
-pub const version_url = 'https://raw.githubusercontent.com/ZaViBiS/Percentage-difference/master/version/version.txt'
+import net.http
+
+pub fn check() {
+	new_ver := http.get(version_url) or {
+		println(err)
+		exit(1)
+	}
+	if new_ver.text.f64() != ver {
+		println('update available $ver -> $new_ver')
+	} else {
+		println('the latest version is already installed.')
+	}
+}
