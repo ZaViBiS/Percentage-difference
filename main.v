@@ -1,3 +1,7 @@
+/*
+ *  GPL-3.0
+ *  Copyright (C) 2021  ZaViBiS
+ */
 import os
 
 import nedpals.vargs
