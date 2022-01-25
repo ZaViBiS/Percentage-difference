@@ -1,7 +1,7 @@
 /*
- *  GPL-3.0
+*  GPL-3.0
  *  Copyright (C) 2021  ZaViBiS
- */
+*/
 module version
 
 import net.http
