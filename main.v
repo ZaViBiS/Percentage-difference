@@ -17,15 +17,15 @@ fn main() {
 
 	if negative {
 		if first < second {
-			println('${cal(first, second)} %')
+			println('${cal(first, second):.4} %')
 		} else {
-			println('${cal(second, first)} %')
+			println('${cal(second, first):.4} %')
 		}
 	} else {
 		if first > second {
-			println('${cal(first, second)} %')
+			println('${cal(first, second):.4} %')
 		} else {
-			println('${cal(second, first)} %')
+			println('${cal(second, first):.4} %')
 		}
 	}
 }
