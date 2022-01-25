@@ -1,6 +1,6 @@
 /*
 GPL-3.0
-   Copyright (C) 2021  ZaViBiS
+   Copyright (C) 2021-2022  ZaViBiS
 */
 module version
 
