@@ -5,19 +5,17 @@
 module main
 
 import os
-import nedpals.vargs
 import version
 
 fn main() {
-	mut parameter := vargs.new(os.args, 0)
-	parameter.parse()
-	if 'v' in parameter.options {
+	if '-v' in os.args {
 		version.check()
 		exit(0)
 	}
-	first := parameter.unknown[0].f64()
-	second := parameter.unknown[1].f64()
-	if 'n' in parameter.options {
+
+	first, second, negative := get_args(os.args)
+
+	if negative {
 		if first < second {
 			println('${cal(first, second)} %')
 		} else {
@@ -34,4 +32,16 @@ fn main() {
 
 fn cal(first f64, second f64) f64 {
 	return (first / second - 1) * 100
+}
+
+fn get_args(a []string) (f64, f64, bool) {
+	mut args := a.clone()
+	args.delete(0) // delete path to file
+	for index, value in args {
+		if value == '-n' {
+			args.delete(index)
+			return args[0].f64(), args[1].f64(), true
+		}
+	}
+	return args[0].f64(), args[1].f64(), false
 }
