@@ -4,6 +4,6 @@ GPL-3.0
 */
 module version
 
-pub const ver = 0.2
+pub const ver = 0.3
 
 pub const version_url = 'https://raw.githubusercontent.com/ZaViBiS/Percentage-difference/master/version/version.txt'
