@@ -15,6 +15,6 @@ pub fn check() {
 	if new_ver != ver {
 		println('update available $ver -> $new_ver')
 	} else {
-		println('the latest version is already installed.')
+		println('the latest version is already installed.\n   $ver')
 	}
 }

@@ -20,13 +20,13 @@ the latest version is already installed.
 
 ```console
 v up
-v -prod main.v -o pd
+v -prod -o pd .
 ```
 
 ### GCC/CC BUILD
 
 ```console
 v up
-v -o main.c main.v
-cc/gcc main.c -o pd
+v -o main.c .
+cc/gcc -o pd -lssl -lcrypto main.c
 ```
